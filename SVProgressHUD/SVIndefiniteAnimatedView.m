@@ -60,7 +60,9 @@
         
         CALayer *maskLayer = [CALayer layer];
         
-        NSBundle *imageBundle = [SVProgressHUD imageBundle];
+        NSBundle *bundle = [NSBundle bundleForClass:[SVProgressHUD class]];
+        NSURL *url = [bundle URLForResource:@"SVProgressHUD" withExtension:@"bundle"];
+        NSBundle *imageBundle = [NSBundle bundleWithURL:url];
         
         NSString *path = [imageBundle pathForResource:@"angle-mask" ofType:@"png"];
         
